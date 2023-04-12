@@ -26,6 +26,10 @@ git clone https://github.com/username/FullPowerFantasyIdleGame.git
 1. Open the project in Unreal Engine.
 2. Press the "Play" button to start the game.
 
+## Contributions
+
+FullPowerFantasy is an open project, and contributions are welcome! If you have any ideas, suggestions, or improvements, please feel free to create an issue or submit a pull request.
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
