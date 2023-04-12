@@ -20,7 +20,7 @@ Clone the repository and open the project in Unreal Engine 4.26 or later.
 
 ```sh
 git clone https://github.com/username/FullPowerFantasyIdleGame.git
-
+```
 ## Usage
 
 1. Open the project in Unreal Engine.
