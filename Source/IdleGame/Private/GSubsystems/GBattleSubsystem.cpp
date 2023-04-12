@@ -2,7 +2,7 @@
 
 
 #include "GSubsystems/GBattleSubsystem.h"
-#include "GChampions/GChampionData.h"
+#include "GChampion/GChampion.h"
 
 void UGBattleSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -12,7 +12,7 @@ void UGBattleSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 	bIsCombatActive = false;
 }
 
-void UGBattleSubsystem::StartCombat(TArray<UGChampionData*> PlayerParty, TArray<UGChampionData*> EnemyParty)
+void UGBattleSubsystem::StartCombat(TArray<UGChampion*> PlayerParty, TArray<UGChampion*> EnemyParty)
 {
 	CurrentTurn = 0;
 	bIsCombatActive = true;
@@ -32,23 +32,23 @@ void UGBattleSubsystem::NextTurn()
 	CurrentTurn = (CurrentTurn + 1) % TurnOrder.Num();
 }
 
-void UGBattleSubsystem::BuildTurnOrder(TArray<UGChampionData*> PlayerParty, TArray<UGChampionData*> EnemyParty)
+void UGBattleSubsystem::BuildTurnOrder(TArray<UGChampion*> PlayerParty, TArray<UGChampion*> EnemyParty)
 {
 	TurnOrder.Empty();
 
-	TArray<UGChampionData*> AllChampions;
+	TArray<UGChampion*> AllChampions;
 	AllChampions.Append(PlayerParty);
 	AllChampions.Append(EnemyParty);
 
-	AllChampions.Sort([](const UGChampionData& A, const UGChampionData& B)
+	AllChampions.Sort([](const UGChampion& A, const UGChampion& B)
 		{
-			return A.Stats.FindChecked("SPD").CurrentValue > B.Stats.FindChecked("SPD").CurrentValue;
+			return A.ChampionData.SPD > B.ChampionData.SPD;
 		});
 
 	TurnOrder = AllChampions;
 }
 
-void UGBattleSubsystem::ExecuteTurn(UGChampionData* Champion)
+void UGBattleSubsystem::ExecuteTurn(UGChampion* Champion)
 {
 	// Implement your ability activation logic here, based on the Champion's abilities and the state of the battle
 }

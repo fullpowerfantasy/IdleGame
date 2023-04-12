@@ -124,7 +124,7 @@ enum class EFaction : uint8
 };
 
 USTRUCT(BlueprintType)
-struct FGChampionStatsRow : public FTableRowBase
+struct FGChampionData: public FTableRowBase
 {
 	GENERATED_BODY()
 

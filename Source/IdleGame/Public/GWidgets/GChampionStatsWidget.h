@@ -16,7 +16,7 @@ class IDLEGAME_API UGChampionStatsWidget : public UUserWidget
 	
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Champion")
-	class UGChampionData* ChampionData;
+	class UGChampion* Champion;
 
 	UPROPERTY(meta = (BindWidget), EditAnywhere, BlueprintReadOnly, Category = "Champion Stats")
 	class UTextBlock* HPText;

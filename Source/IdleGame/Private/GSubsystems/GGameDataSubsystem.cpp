@@ -2,7 +2,7 @@
 
 
 #include "GSubsystems/GGameDataSubsystem.h"
-#include "GChampions/GChampionData.h"
+#include "GChampion/GChampion.h"
 
 
 void UGGameDataSubsystem::Initialize(FSubsystemCollectionBase& Collection)
@@ -24,18 +24,18 @@ void UGGameDataSubsystem::Deinitialize()
 
 void UGGameDataSubsystem::LoadChampionsFromDataAssets()
 {
-	for (UGChampionData* ChampionData : ChampionDataAssets)
+	for (UGChampion* ChampionData : ChampionDataAssets)
 	{
 		if (ChampionData)
 		{
-			UGChampionData* NewChampion = NewObject<UGChampionData>(this);
-			NewChampion->ChampionName = ChampionData->ChampionName;
-			NewChampion->DisplayName = ChampionData->DisplayName;
-			NewChampion->Icon = ChampionData->Icon;
-			NewChampion->Stats = ChampionData->Stats;
-			// TODO: Assign other properties, such as equipment, skills, auras, and masteries
+			//UGChampion* NewChampion = NewObject<UGChampion>(this);
+			//NewChampion->ChampionName = ChampionData->ChampionName;
+			//NewChampion->DisplayName = ChampionData->DisplayName;
+			//NewChampion->Icon = ChampionData->Icon;
+			//NewChampion->Stats = ChampionData->Stats;
+			//// TODO: Assign other properties, such as equipment, skills, auras, and masteries
 
-			Champions.Add(ChampionData->ChampionName, NewChampion);
+			//Champions.Add(ChampionData->ChampionName, NewChampion);
 		}
 	}
 }

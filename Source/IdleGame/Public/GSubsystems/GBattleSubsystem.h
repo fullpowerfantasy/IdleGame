@@ -18,14 +18,14 @@ public:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 
 	UFUNCTION(BlueprintCallable, Category = "Combat")
-	void StartCombat(TArray<class UGChampionData*> PlayerParty, TArray<UGChampionData*> EnemyParty);
+	void StartCombat(TArray<class UGChampion*> PlayerParty, TArray<UGChampion*> EnemyParty);
 
 	UFUNCTION(BlueprintCallable, Category = "Combat")
 	void NextTurn();
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
-	TArray<UGChampionData*> TurnOrder;
+	TArray<UGChampion*> TurnOrder;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
 	int32 CurrentTurn;
@@ -33,7 +33,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
 	bool bIsCombatActive;
 
-	void BuildTurnOrder(TArray<UGChampionData*> PlayerParty, TArray<UGChampionData*> EnemyParty);
+	void BuildTurnOrder(TArray<UGChampion*> PlayerParty, TArray<UGChampion*> EnemyParty);
 
-	void ExecuteTurn(UGChampionData* Champion);
+	void ExecuteTurn(UGChampion* Champion);
 };

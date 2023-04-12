@@ -2,7 +2,7 @@
 
 
 #include "GWidgets/GChampionStatsWidget.h"
-#include "GChampions/GChampionData.h"
+#include "GChampion/GChampion.h"
 #include "Components/TextBlock.h"
 
 void UGChampionStatsWidget::NativeConstruct()
@@ -31,12 +31,12 @@ void UGChampionStatsWidget::NativeTick(const FGeometry& MyGeometry, float InDelt
 
 void UGChampionStatsWidget::UpdateTextWidgets()
 {
-	if (HPText && ChampionData)
+	if (HPText && Champion)
 	{
 		//HPText->SetText(FText::FromString(FString::Printf(TEXT("HP: %d"), ChampionData->HP)));
 	}
 
-	if (ATKText && ChampionData)
+	if (ATKText && Champion)
 	{
 		//ATKText->SetText(FText::FromString(FString::Printf(TEXT("ATK: %d"), ChampionData->ATK)));
 	}

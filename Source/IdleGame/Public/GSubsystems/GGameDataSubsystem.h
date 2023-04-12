@@ -23,13 +23,13 @@ public:
 	virtual void Deinitialize() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Champions")
-	TMap<FName, class UGChampionData*> Champions;
+	TMap<FName, class UGChampion*> Champions;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Party")
 	TArray<FName> Party;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Champions")
-	TArray<UGChampionData*> ChampionDataAssets;
+	TArray<UGChampion*> ChampionDataAssets;
 
 	UFUNCTION(BlueprintCallable, Category = "Champions")
 	void LoadChampionsFromDataAssets();
